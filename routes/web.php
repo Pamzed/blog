@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function (Request $request) {
-    if ($request->getSchemeAndHttpHost() === 'https://test.larihq.com' || $request->getSchemeAndHttpHost() === 'test.larihq.com' || $request->getSchemeAndHttpHost() === 'http://test.larihq.com') {
+    if ($request->getSchemeAndHttpHost() === 'http://127.0.0.1:8000' || $request->getSchemeAndHttpHost() === '127.0.0.1:8000' || $request->getSchemeAndHttpHost() === 'http://127.0.0.1:8000') {
         return response()->json([
             'status' => 200,
             'success' => true,
@@ -24,7 +24,7 @@ Route::get('/', function (Request $request) {
             'data' => null,
         ]);
     } else {
-        return '<center>So what you looking for?</center>';
+        return '<center>This is the backend for the blog</center>';
     }
 });
 
